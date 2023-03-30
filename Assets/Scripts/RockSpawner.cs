@@ -5,9 +5,11 @@ using UnityEngine;
 public class RockSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool isSpawned = false;
     public GameObject enemy;
-    public float delta;
+    bool isSpawned = false;
+   
+    public float deltax;
+    public float deltay;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +17,7 @@ public class RockSpawner : MonoBehaviour
         {
             isSpawned = true;
             var transform = GetComponent<Transform>();
-            var rockkInstance = (GameObject)Instantiate(enemy, new Vector3(transform.position.x + delta, transform.position.y, 0), Quaternion.identity);
+            var rockkInstance = (GameObject)Instantiate(enemy, new Vector3(transform.position.x + deltax, transform.position.y+ deltay, 0), Quaternion.identity);
 
         }
     }
