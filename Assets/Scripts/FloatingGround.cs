@@ -6,6 +6,7 @@ public class FloatingGround : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D rigidBody2d;
+    public float timeBeforeFall = 0.5f;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class FloatingGround : MonoBehaviour
 
     IEnumerator Fall()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(timeBeforeFall);
         //playerRigidbody2D.AddForce(new Vector2(speed, yVelocityScale * yspeed * 3.75f), ForceMode2D.Impulse);
         rigidBody2d.freezeRotation = true;
         rigidBody2d.gravityScale = 9.0f;

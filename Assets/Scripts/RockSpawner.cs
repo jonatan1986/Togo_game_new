@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeeSpawner : MonoBehaviour
+public class RockSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     bool isSpawned = false;
@@ -15,9 +15,8 @@ public class BeeSpawner : MonoBehaviour
         {
             isSpawned = true;
             var transform = GetComponent<Transform>();
-            var beeInstance = (GameObject)Instantiate(enemy, new Vector3(transform.position.x + delta, transform.position.y, 0), Quaternion.identity);
+            var rockkInstance = (GameObject)Instantiate(enemy, new Vector3(transform.position.x + delta, transform.position.y, 0), Quaternion.identity);
 
         }
     }
-
 }
