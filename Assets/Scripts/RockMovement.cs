@@ -33,12 +33,12 @@ public class RockMovement : MonoBehaviour
         Debug.Log("OnCollisionEnter2D " + other.gameObject.tag);
         if (other.gameObject.tag == "ground")
         {
-            rigidBody2d.gravityScale = 3f;
+            rigidBody2d.gravityScale = 2f;
             float forceHeight = 500f;
             rigidBody2d.velocity = Vector2.zero;
             //rigidBody2d.AddForce(Vector2.up * forceHeight);
-            rigidBody2d.AddForce(new Vector2(-4,ySpeed), ForceMode2D.Impulse);
-            ySpeed -= 1f;
+            rigidBody2d.AddForce(new Vector2(-5,ySpeed), ForceMode2D.Impulse);
+            ySpeed -= 0.25f;
             bTouchedGround = true;
         }
         else if (other.gameObject.tag == "Player")

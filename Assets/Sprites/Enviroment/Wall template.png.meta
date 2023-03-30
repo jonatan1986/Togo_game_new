@@ -119,10 +119,10 @@ TextureImporter:
       name: Wall template_0
       rect:
         serializedVersion: 2
-        x: 955
-        y: 655
-        width: 102
-        height: 112
+        x: 660
+        y: 698
+        width: 747
+        height: 247
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a1c401878b514e418548ce7c7b52ead
-      internalID: 918220831
+      spriteID: a71ef3f20802767479f65243ceb11fdb
+      internalID: -2061073515
       vertices: []
       indices: 
       edges: []
@@ -140,10 +140,10 @@ TextureImporter:
       name: Wall template_1
       rect:
         serializedVersion: 2
-        x: 1107
-        y: 655
-        width: 112
-        height: 112
+        x: 660
+        y: 397
+        width: 747
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +151,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1d3615e13792a74dafc8b1875df60f2
-      internalID: -93083140
+      spriteID: c3d898750bdcf0e4299ecb4c9431a519
+      internalID: -1829888305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall template_2
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 124
+        width: 747
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79c0d73f1c545c478f274a394e2df7f
+      internalID: -944224078
       vertices: []
       indices: 
       edges: []
@@ -168,15 +189,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wall template_1: -93083140
-      Wall template_0: 918220831
-      Wall template_5: -1576169880
-      Wall template_6: -1442816864
-      Wall template_8: 1365494657
-      Wall template_3: 1550251733
-      Wall template_2: -1343066646
-      Wall template_4: 676313003
-      Wall template_7: 326523352
+      Wall template_1: -1829888305
+      Wall template_0: -2061073515
+      Wall template_3: -1013093322
+      Wall template_2: -944224078
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
