@@ -6,7 +6,7 @@ public class MathParabola
 
     public static Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
     {
-        Func<float, float> f = x => -4 * height * x * x + 4 * height * x;
+        Func<float, float> f = x => -1 * height * x * 1  + 1 * height * x;
 
         var mid = Vector3.Lerp(start, end, t);
 
@@ -15,7 +15,7 @@ public class MathParabola
 
     public static Vector2 Parabola(Vector2 start, Vector2 end, float height, float t)
     {
-        Func<float, float> f = x => -4 * height * x * x + 4 * height * x;
+        Func<float, float> f = x => -1 * height * x * 1 + 1 * height * x;
 
         var mid = Vector2.Lerp(start, end, t);
 

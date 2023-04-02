@@ -17,12 +17,21 @@ public class CharacterMovement : MonoBehaviour {
     public bool IsGrounded = false;
     public const float yVelocityScale = 1.3f;
     bool bIsDead = false;
+    bool bIsOnSpring = false;
     bool bISDeadByParabolaJump = false;
     bool bEnablePlayerInput = true;
     private GameObject canvas = null;
     protected float Animation;
     //private Transform naviationManager = null;
     private bool m_bIsMovingRight = true;
+    public float cycles = 3;
+    private float cyclesSize = 0;
+
+    public void SetIsOnSrping()
+    {
+        animator.SetBool("OnSpring", true);
+        bIsOnSpring = true;
+    }
 
     public void SetIsDead(bool iSDeadByParabolaJump = false)
     {
@@ -56,6 +65,7 @@ public class CharacterMovement : MonoBehaviour {
         playerRigidbody2D.gravityScale = 40.0f;
         animator = GetComponent<Animator>();
         canvas = GameObject.FindWithTag("Canvas");
+        cyclesSize = cycles;
 
     }
 
@@ -70,9 +80,51 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
 
+    IEnumerator ReturnToJumpState()
+    {
+        Debug.Log("ReturnToJumpState");
+        yield return new WaitForSeconds(1);// WaitForEndOfFrame();//
+        bIsOnSpring = false;
+    }
+    
+    void JumpOnSpring()
+    {
+
+        if (bIsOnSpring == true)
+        {
+            if (Input.GetAxis("Vertical") > 0 )
+            {
+                playerRigidbody2D.AddForce(new Vector2(0f, 70f), ForceMode2D.Force);
+                playerRigidbody2D.velocity += new Vector2(0f, 30f);
+            }
+            //Debug.Log("jumponspring");
+
+            //playerRigidbody2D.AddForce(new Vector2(0f, 30f), ForceMode2D.Impulse);
+            if (cycles > 0)
+            {
+                cycles -= 1;
+            }
+            else
+            {
+                cycles = cyclesSize;
+                bIsOnSpring = false;
+                animator.SetBool("OnSpring", false);
+            }
+            ////startcoroutine(returntojumpstate());
+            ////animator.setbool("backtojump", true);
+            //bisonspring = false;
+            //bbacktojump = true;
+            ////playerrigidbody2d.gravityscale = 40f;
+        }
+    }
+
     IEnumerator MovePlayerWithParabola()
     {
-        transform.position = MathParabola.Parabola(Vector2.zero, Vector2.left * (20f), 10f, Animation / 5f);
+        float x = transform.position.x;
+        float y = transform.position.y;
+
+        //transform.position = MathParabola.Parabola(Vector2.zero, Vector2.left * (-80f), 10f, Animation / 5f);
+        transform.position = MathParabola.Parabola(Vector2.zero, new Vector2(x-0.5f,y+6), 0f, Animation / 2.7f);
         yield return new WaitForSeconds(2);
     }
 
@@ -176,6 +228,7 @@ public class CharacterMovement : MonoBehaviour {
         playerRigidbody2D.velocity = movement * speed * 2;
 
         Jump();
+        JumpOnSpring();
         Freeze();
     }
 
