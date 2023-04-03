@@ -26,6 +26,7 @@ public class CharacterMovement : MonoBehaviour {
     private bool m_bIsMovingRight = true;
     public float cycles = 3;
     private float cyclesSize = 0;
+    public float springVerticalVelocity = 0f;
 
     public void SetIsOnSrping()
     {
@@ -62,7 +63,7 @@ public class CharacterMovement : MonoBehaviour {
             GetToLastCheckPoint();
         }
         playerRigidbody2D =  (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
-        playerRigidbody2D.gravityScale = 40.0f;
+        //playerRigidbody2D.gravityScale = 40.0f;
         animator = GetComponent<Animator>();
         canvas = GameObject.FindWithTag("Canvas");
         cyclesSize = cycles;
@@ -94,8 +95,8 @@ public class CharacterMovement : MonoBehaviour {
         {
             if (Input.GetAxis("Vertical") > 0 )
             {
-                playerRigidbody2D.AddForce(new Vector2(0f, 70f), ForceMode2D.Force);
-                playerRigidbody2D.velocity += new Vector2(0f, 30f);
+                playerRigidbody2D.AddForce(new Vector2(0f, springVerticalVelocity), ForceMode2D.Force);
+                playerRigidbody2D.velocity += new Vector2(0f, springVerticalVelocity);
             }
             //Debug.Log("jumponspring");
 
@@ -189,6 +190,7 @@ public class CharacterMovement : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log("playerRigidbody2D.gravityScale " + playerRigidbody2D.gravityScale);
         //
         Animation += Time.deltaTime;
         Animation = Animation % 5f;
