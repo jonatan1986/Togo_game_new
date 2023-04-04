@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour {
     private Vector2 movement;
     private Animator animator;
     public float speed = 4.0f;
-    public const float  yspeed = 100.0f;
+    public float  yspeed = 100.0f;
     private float thrust = 10.0f;
     public bool IsGrounded = false;
     public const float yVelocityScale = 1.3f;
@@ -63,7 +63,7 @@ public class CharacterMovement : MonoBehaviour {
             GetToLastCheckPoint();
         }
         playerRigidbody2D =  (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
-        //playerRigidbody2D.gravityScale = 40.0f;
+        playerRigidbody2D.gravityScale = 50.0f;
         animator = GetComponent<Animator>();
         canvas = GameObject.FindWithTag("Canvas");
         cyclesSize = cycles;
@@ -76,7 +76,9 @@ public class CharacterMovement : MonoBehaviour {
         if (IsGrounded == true && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow))
             && bEnablePlayerInput == true)
         {
-            playerRigidbody2D.AddForce(new Vector2(speed, yVelocityScale * yspeed * 3.75f), ForceMode2D.Impulse);
+            //playerRigidbody2D.AddForce(new Vector2(speed, yVelocityScale * yspeed * 3.75f), ForceMode2D.Impulse);
+            //playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed * 3.75f);
+            playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed);
             animator.SetBool("isJumping", true);
         }
     }
