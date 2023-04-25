@@ -131,10 +131,6 @@ public class CharacterMovement : MonoBehaviour {
         yield return new WaitForSeconds(2);
     }
 
-    //void FadeScreen()
-    //{
-
-    //}
 
 
     IEnumerator KillPlayerByParbolaMovement()
@@ -144,7 +140,7 @@ public class CharacterMovement : MonoBehaviour {
         yield return StartCoroutine(MovePlayerWithParabola());
         GameObject.FindWithTag("MainCamera").GetComponent<maincamera>().PauseMovement();
         StartCoroutine(canvas.GetComponent<UiController>().FadeBlackOutSquare());
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         ReloadScene();
     }
 
@@ -159,7 +155,7 @@ public class CharacterMovement : MonoBehaviour {
         bEnablePlayerInput = false;
         GameObject.FindWithTag("MainCamera").GetComponent<maincamera>().PauseMovement();
         StartCoroutine(canvas.GetComponent<UiController>().FadeBlackOutSquare());
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         ReloadScene();
     }
 
