@@ -27,6 +27,7 @@ public class CharacterMovement : MonoBehaviour {
     public float cycles = 3;
     private float cyclesSize = 0;
     public float springVerticalVelocity = 0f;
+    public AudioClip DeadSound;
 
     public void SetIsOnSrping()
     {
@@ -139,6 +140,7 @@ public class CharacterMovement : MonoBehaviour {
         bEnablePlayerInput = false;
         yield return StartCoroutine(MovePlayerWithParabola());
         GameObject.FindWithTag("MainCamera").GetComponent<maincamera>().PauseMovement();
+        AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         StartCoroutine(canvas.GetComponent<UiController>().FadeBlackOutSquare());
         yield return new WaitForSeconds(1);
         ReloadScene();
@@ -154,6 +156,7 @@ public class CharacterMovement : MonoBehaviour {
         GetComponent<Collider2D>().enabled = false;
         bEnablePlayerInput = false;
         GameObject.FindWithTag("MainCamera").GetComponent<maincamera>().PauseMovement();
+        AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         StartCoroutine(canvas.GetComponent<UiController>().FadeBlackOutSquare());
         yield return new WaitForSeconds(2);
         ReloadScene();
