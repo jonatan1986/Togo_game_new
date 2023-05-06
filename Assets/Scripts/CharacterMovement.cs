@@ -96,7 +96,8 @@ public class CharacterMovement : MonoBehaviour {
 
         if (bIsOnSpring == true)
         {
-            if (Input.GetAxis("Vertical") > 0 )
+            Debug.Log("bIsOnSpring");
+            //if (Input.GetAxis("Vertical") > 0)
             {
                 playerRigidbody2D.AddForce(new Vector2(0f, springVerticalVelocity), ForceMode2D.Force);
                 playerRigidbody2D.velocity += new Vector2(0f, springVerticalVelocity);
@@ -191,7 +192,6 @@ public class CharacterMovement : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log("playerRigidbody2D.gravityScale " + playerRigidbody2D.gravityScale);
         //
         Animation += Time.deltaTime;
         Animation = Animation % 5f;
