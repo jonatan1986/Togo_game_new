@@ -62215,7 +62215,7 @@ Tilemap:
       - {fileID: -350001158, guid: 75b9cabaa44406045b82a30453796395, type: 3}
       - {fileID: -1358468743, guid: 75b9cabaa44406045b82a30453796395, type: 3}
       - {fileID: 1399242154, guid: 75b9cabaa44406045b82a30453796395, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 31, y: -9, z: 0}
@@ -62495,7 +62495,7 @@ Tilemap:
       - {fileID: -350001158, guid: 75b9cabaa44406045b82a30453796395, type: 3}
       - {fileID: -1358468743, guid: 75b9cabaa44406045b82a30453796395, type: 3}
       - {fileID: 1399242154, guid: 75b9cabaa44406045b82a30453796395, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 33, y: -7, z: 0}
@@ -62523,7 +62523,7 @@ Tilemap:
       - {fileID: -350001158, guid: 75b9cabaa44406045b82a30453796395, type: 3}
       - {fileID: -1358468743, guid: 75b9cabaa44406045b82a30453796395, type: 3}
       - {fileID: 1399242154, guid: 75b9cabaa44406045b82a30453796395, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 38, y: -7, z: 0}
@@ -66383,7 +66383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687843342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.409999, y: -0.15999976, z: -8}
+  m_LocalPosition: {x: 92.8, y: -8.4, z: -8}
   m_LocalScale: {x: 1, y: 0.27499932, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69551,7 +69551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917492094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.409999, y: -0.15999976, z: -8}
+  m_LocalPosition: {x: 92.8, y: -8.4, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -72658,7 +72658,7 @@ PrefabInstance:
     - target: {fileID: 4410489509013521120, guid: 7e50c9d1f5783dc4f96ea38f28a27fd6,
         type: 3}
       propertyPath: delta
-      value: 12
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4410489509013521122, guid: 7e50c9d1f5783dc4f96ea38f28a27fd6,
         type: 3}
@@ -72717,8 +72717,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4410489509013521127, guid: 7e50c9d1f5783dc4f96ea38f28a27fd6,
         type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 4410489509013521127, guid: 7e50c9d1f5783dc4f96ea38f28a27fd6,
+        type: 3}
       propertyPath: m_Name
       value: BeeSpwaner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410489509013521127, guid: 7e50c9d1f5783dc4f96ea38f28a27fd6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e50c9d1f5783dc4f96ea38f28a27fd6, type: 3}
@@ -72979,12 +72990,12 @@ PrefabInstance:
     - target: {fileID: 3060498061176628563, guid: d9d5e21392ed6af48a34eedc4dd4749e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.41
+      value: 92.8
       objectReference: {fileID: 0}
     - target: {fileID: 3060498061176628563, guid: d9d5e21392ed6af48a34eedc4dd4749e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.16
+      value: -8.4
       objectReference: {fileID: 0}
     - target: {fileID: 3060498061176628563, guid: d9d5e21392ed6af48a34eedc4dd4749e,
         type: 3}
