@@ -8,6 +8,8 @@ public class BeeSpawner : MonoBehaviour
     bool isSpawned = false;
     public GameObject enemy;
     public float delta;
+    public float velocity = 100.0f;
+    Rigidbody2D rigidBody2d;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +18,9 @@ public class BeeSpawner : MonoBehaviour
             isSpawned = true;
             var transform = GetComponent<Transform>();
             var beeInstance = (GameObject)Instantiate(enemy, new Vector3(transform.position.x + delta, transform.position.y, 0), Quaternion.identity);
-
+            rigidBody2d = (Rigidbody2D)beeInstance.GetComponent(typeof(Rigidbody2D));
+            rigidBody2d.velocity = new Vector2(velocity, 0);
+            //beeInstance.gameobject.(Rigidbody2D)GetComponent(typeof(Rigidbody2D)).velocity = new Vector2(0 * 0.1f, 0);
         }
     }
 

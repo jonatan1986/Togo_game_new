@@ -25,7 +25,8 @@ public class beeBehavior : MonoBehaviour
         if (isBeeDead == false)
         {
             rigidBody2d.gravityScale = 0.0f;
-            rigidBody2d.AddForce(new Vector2(speed * 0.1f, 0), ForceMode2D.Impulse);
+            rigidBody2d.velocity = new Vector2(speed*3, 0);
+            //rigidBody2d.AddForce(new Vector2(speed * 0.2f, 0), ForceMode2D.Impulse);
         }
    
     }

@@ -5,15 +5,16 @@ using UnityEngine;
 public class ElephantMovement : MonoBehaviour
 {
     private Vector2 movement;
-    private Rigidbody2D playerRigidbody2D;
+    private Rigidbody2D rigidBody2d;
     private Animator animator;
     public float speed = 0.01f;
+    private bool isDead = false;
     private float movePlayerHorizontal = -0.3f;
     private CharacterMovement characterMovement;
 
     void Awake()
     {
-        playerRigidbody2D = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
+        rigidBody2d = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
         animator = GetComponent<Animator>();
 
     }
@@ -34,9 +35,11 @@ public class ElephantMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = new Vector2(movePlayerHorizontal, 0.0f);
-
-        playerRigidbody2D.velocity = movement * speed * 2;
+        if (isDead == false)
+        {
+            movement = new Vector2(movePlayerHorizontal, 0.0f);
+            rigidBody2d.velocity = movement * speed * 2;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -52,11 +55,23 @@ public class ElephantMovement : MonoBehaviour
         else if (other.gameObject.tag == "Weapon")
         {
             Debug.Log("gameObject.transform.parent" + gameObject.transform.parent);
-            Destroy(gameObject);
+            animator.SetBool("isdead", true);
+            rigidBody2d.gravityScale = 0.1f;
+            isDead = true;
+            rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
+            StartCoroutine(AccelerateFall());
+            //Destroy(gameObject);
             //Die();
         }
 
         //Destroy(other.gameObject);
+    }
+
+    IEnumerator AccelerateFall()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        rigidBody2d.gravityScale = 5f;
     }
 
     void Die()
