@@ -228,21 +228,15 @@ public class CharacterMovement : MonoBehaviour {
             movePlayerVertical = 0f;
         }
 
-        
+        CheckFlipDirection();
+
+
         animator.SetInteger("xMove", (int)movePlayerHorizontal);
         animator.SetFloat("xMoveOneClick", movePlayerHorizontal);
 
         animator.SetInteger("yMove", (int)movePlayerVertical);
         //  animator.SetFloat("yMove", movePlayerVertical);
-        if (movePlayerHorizontal < 0  && m_bIsMovingRight)
-        {
-            Flip(-1);
-        }
-        else if (movePlayerHorizontal > 0 && !m_bIsMovingRight)
-        {
-            Flip(1);
-        }
-
+   
         movement = new Vector2(movePlayerHorizontal,  0.0f);
 
         playerRigidbody2D.velocity = movement * speed * 2;
@@ -252,7 +246,18 @@ public class CharacterMovement : MonoBehaviour {
         Freeze();
     }
 
+    private void CheckFlipDirection()
+    {
+        if (movePlayerHorizontal < 0 && m_bIsMovingRight)
+        {
+            Flip(-1);
+        }
+        else if (movePlayerHorizontal > 0 && !m_bIsMovingRight)
+        {
+            Flip(1);
+        }
 
+    }
     private void Flip(int num)
     {
         m_bIsMovingRight = !m_bIsMovingRight;
