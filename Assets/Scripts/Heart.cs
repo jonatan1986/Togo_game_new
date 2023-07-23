@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Heart : MonoBehaviour
 {
-    public AudioClip DiamondSound;
+    public AudioClip HeartSound;
+    private CharacterMovement characterMovement;
 
-
+    void Start()
+    {
+        //DontDestroyOnLoad(this.gameObject);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -15,6 +19,11 @@ public class Heart : MonoBehaviour
         {
             //AudioSource.PlayClipAtPoint(DiamondSound, transform.position);
             //remove the coin
+            characterMovement = other.gameObject.GetComponent<CharacterMovement>();
+            if (characterMovement)
+            {
+                characterMovement.AddLife();
+            }
             Destroy(gameObject);
         }
     }

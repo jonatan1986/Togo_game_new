@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+
 
 public class CharacterMovement : MonoBehaviour {
    
@@ -14,7 +16,7 @@ public class CharacterMovement : MonoBehaviour {
     public float speed = 4.0f;
     public float  yspeed = 100.0f;
     private float thrust = 10.0f;
-    public bool IsGrounded = false;
+    public bool bIsGrounded = false;
     public const float yVelocityScale = 1.3f;
     bool bIsDead = false;
     bool bIsOnSpring = false;
@@ -28,6 +30,21 @@ public class CharacterMovement : MonoBehaviour {
     private float cyclesSize = 0;
     public float springVerticalVelocity = 0f;
     public AudioClip DeadSound;
+    public UnityEvent m_AddLife;
+    public UnityEvent m_loseLife;
+
+
+
+
+    public void AddLife()
+    {
+        m_AddLife.Invoke();
+    }
+
+    public void RemoveLife()
+    {
+        m_loseLife.Invoke();
+    }
 
     public void SetIsOnSrping()
     {
@@ -74,7 +91,7 @@ public class CharacterMovement : MonoBehaviour {
     void Jump()
     {
         // Debug.Log("IsGrounded " + IsGrounded);
-        if (IsGrounded == true && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow))
+        if (bIsGrounded == true && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow))
             && bEnablePlayerInput == true)
         {
             //playerRigidbody2D.AddForce(new Vector2(speed, yVelocityScale * yspeed * 3.75f), ForceMode2D.Impulse);
@@ -139,8 +156,8 @@ public class CharacterMovement : MonoBehaviour {
     {
         GetComponent<Collider2D>().enabled = false;
         bEnablePlayerInput = false;
-        yield return StartCoroutine(MovePlayerWithParabola());
         GameObject.FindWithTag("MainCamera").GetComponent<maincamera>().PauseMovement();
+        yield return StartCoroutine(MovePlayerWithParabola());
         AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         StartCoroutine(canvas.GetComponent<UiController>().FadeBlackOutSquare());
         yield return new WaitForSeconds(1);
@@ -196,7 +213,7 @@ public class CharacterMovement : MonoBehaviour {
         Animation += Time.deltaTime;
         Animation = Animation % 5f;
         //
-        if (IsGrounded == true)
+        if (bIsGrounded == true)
         {
             animator.SetBool("isJumping", false);
         }

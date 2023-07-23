@@ -8,7 +8,6 @@ public class PlayerPosition : MonoBehaviour
     private float m_xPosition = 0;
     private float m_yPosition = 0;
     private bool m_isDataSaved = false;
-    public GameObject player;
 
 
     public bool bIsDataSaved()

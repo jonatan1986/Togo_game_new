@@ -36,7 +36,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _01influence: 0
+    - _01influence: 1
     - _02influence: 1
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 1

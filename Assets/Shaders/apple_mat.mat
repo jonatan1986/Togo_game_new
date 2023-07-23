@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_flash_Shader
+  m_Name: apple_mat
   m_Shader: {fileID: -6465566751694194690, guid: b93e326ccced63c469b67dea9750f8dd,
     type: 3}
   m_ValidKeywords: []
@@ -111,10 +111,10 @@ Material:
     - _DecalMeshViewBias: 0
     - _DrawOrder: 0
     - _EMISSION_WEIGHT: 1
-    - _FlashAmount: 1
+    - _FlashAmount: 0
     - _METALNESS: 0
     - _OPACITY: 1
-    - _QueueControl: -1
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _REFLECTIONS_IOR: 1.52
     - _REFLECTIONS_ROUGHNESS: 1
@@ -127,7 +127,7 @@ Material:
     - _Color01: {r: 0.8584906, g: 0, b: 0, a: 0}
     - _Color02: {r: 0.1676471, g: 0.1531628, b: 0, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _FlashColor: {r: 1, g: 1, b: 1, a: 0}
+    - _FlashColor: {r: 10.432953, g: 5.3530335, b: 1.6386837, a: 0}
     - _REFLECTIONS_COLOR: {r: 1, g: 1, b: 1, a: 1}
     - _SPECULAR_COLOR: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

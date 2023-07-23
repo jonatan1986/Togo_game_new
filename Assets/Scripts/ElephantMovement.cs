@@ -54,7 +54,6 @@ public class ElephantMovement : MonoBehaviour
         }
         else if (other.gameObject.tag == "Weapon")
         {
-            Debug.Log("gameObject.transform.parent" + gameObject.transform.parent);
             animator.SetBool("isdead", true);
             rigidBody2d.gravityScale = 0.1f;
             isDead = true;

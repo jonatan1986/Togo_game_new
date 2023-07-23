@@ -4,7 +4,12 @@ using System.Collections;
 public class apple : MonoBehaviour {
 
     public AudioClip AppleSound;
+    //private DamageFlash _damageFlash;
 
+    void Start()
+    {
+        //_damageFlash = GetComponent<DamageFlash>();   
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +18,7 @@ public class apple : MonoBehaviour {
         if (other.tag == "Player")
         {
             AudioSource.PlayClipAtPoint(AppleSound, transform.position);
-            //remove the coin
+            //remove the apple
             Destroy(gameObject);
         }
     }
