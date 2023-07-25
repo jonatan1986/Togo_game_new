@@ -4,20 +4,43 @@ using UnityEngine;
 
 public class beeBehavior : MonoBehaviour
 {
+    private Vector2 movement;
     public float speed;
     private bool isTriggered;
     private CharacterMovement characterMovement;
     private Animator animator;
     private bool isBeeDead = false;
     Rigidbody2D rigidBody2d;
+    public bool bIsBeeSpwaned = false;
+    private float moveHorizontal = 0.3f;
+    public bool m_bMoveRight = false;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         isTriggered = false;
         rigidBody2d = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
-        StartCoroutine(RemoveObject());
+        //StartCoroutine(RemoveObject());
     }
+
+
+    public void SetTurnRight()
+    {
+        Debug.Log("SetTurnRight");
+        animator.SetBool("turnrightTrigger", true);
+        moveHorizontal = -moveHorizontal;
+        //rigidBody2d.velocity = new Vector2(moveHorizontal * 3, 0);
+    }
+
+
+    public void SetTurnLeft()
+    {
+        Debug.Log("SetTurnLeft");
+        animator.SetBool("turnrightTrigger", false);
+        moveHorizontal = -moveHorizontal;
+        //rigidBody2d.velocity = new Vector2(-speed * 3, 0);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -25,29 +48,52 @@ public class beeBehavior : MonoBehaviour
         if (isBeeDead == false)
         {
             rigidBody2d.gravityScale = 0.0f;
-            rigidBody2d.velocity = new Vector2(speed*3, 0);
+            rigidBody2d.velocity = new Vector2(speed*moveHorizontal * 3, 0);
             //rigidBody2d.AddForce(new Vector2(speed * 0.2f, 0), ForceMode2D.Impulse);
         }
+        //if (bIsBeeSpwaned == true)
+        //{
+        //    movement = new Vector2(moveHorizontal, 0.0f);
+        //}
    
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && isBeeDead == false)
+        Debug.Log("OnTriggerEnter2D " + other.gameObject.tag);
+        switch (other.gameObject.tag)
         {
-            characterMovement = other.gameObject.GetComponent<CharacterMovement>();
-            if (characterMovement)
-            {
-                characterMovement.SetIsDead(true);
-            }
-        }
-        else if (other.gameObject.tag == "Weapon")
-        {
-            animator.SetBool("isDead", true);
-            isBeeDead = true;
-            rigidBody2d.gravityScale = 0.1f;
-            rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
-            StartCoroutine(AccelerateFall());
+            case "Player":
+                if (isBeeDead == false)
+                {
+                    characterMovement = other.gameObject.GetComponent<CharacterMovement>();
+                    if (characterMovement)
+                    {
+                        characterMovement.SetIsDead(true);
+                    }
+                }
+                break;
+            case "Weapon":
+                if (other.gameObject.tag == "Weapon")
+                {
+                    animator.SetBool("isDead", true);
+                    isBeeDead = true;
+                    rigidBody2d.gravityScale = 0.1f;
+                    rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
+                    StartCoroutine(AccelerateFall());
+                }
+                break;
+            case "Border":
+                if (m_bMoveRight)
+                {
+                    SetTurnLeft();
+                }
+                else
+                { 
+                    SetTurnRight();
+                }
+                m_bMoveRight = !m_bMoveRight;
+                break;
         }
     }
 

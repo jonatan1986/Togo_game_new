@@ -9,27 +9,28 @@ public class ElephantMovement : MonoBehaviour
     private Animator animator;
     public float speed = 0.01f;
     private bool isDead = false;
-    private float movePlayerHorizontal = -0.3f;
+    private float moveHorizontal = -0.3f;
     private CharacterMovement characterMovement;
+    public LeftRightMovement leftRightMovement;
 
     void Awake()
     {
         rigidBody2d = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
         animator = GetComponent<Animator>();
-
+        leftRightMovement = new LeftRightMovement();
     }
 
     public void SetTurnRight()
     {
         animator.SetBool("turnrightTrigger", true);
-        movePlayerHorizontal = 0.3f;
+        moveHorizontal = 0.3f;
     }
 
 
     public void SetTurnLeft()
     {
         animator.SetBool("turnrightTrigger", false);
-        movePlayerHorizontal = -0.3f;
+        moveHorizontal = -0.3f;
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class ElephantMovement : MonoBehaviour
     {
         if (isDead == false)
         {
-            movement = new Vector2(movePlayerHorizontal, 0.0f);
+            movement = new Vector2(moveHorizontal, 0.0f);
             rigidBody2d.velocity = movement * speed * 2;
         }
     }

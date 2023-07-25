@@ -103,7 +103,6 @@ public class CharacterMovement : MonoBehaviour {
 
     IEnumerator ReturnToJumpState()
     {
-        Debug.Log("ReturnToJumpState");
         yield return new WaitForSeconds(1);// WaitForEndOfFrame();//
         bIsOnSpring = false;
     }
@@ -113,7 +112,6 @@ public class CharacterMovement : MonoBehaviour {
 
         if (bIsOnSpring == true)
         {
-            Debug.Log("bIsOnSpring");
             //if (Input.GetAxis("Vertical") > 0)
             {
                 playerRigidbody2D.AddForce(new Vector2(0f, springVerticalVelocity), ForceMode2D.Force);

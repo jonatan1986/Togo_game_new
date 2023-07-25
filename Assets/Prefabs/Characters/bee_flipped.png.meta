@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c50790114315e1445832e22d42b2f30b
+guid: bfefbd54a3bf9d34ebe7a318d1d52975
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bee_0
+      name: bee_flipped_0
       rect:
         serializedVersion: 2
-        x: 200
-        y: 819
+        x: 270
+        y: 783
+        width: 421
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 3, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feeca70756c80cf468e7202f2b36e66d
+      internalID: 1136874586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bee_flipped_1
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 793
         width: 419
-        height: 224
+        height: 264
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 442d3f1396584d24c81903598bb7f87e
-      internalID: 1062842313
+      spriteID: 86bc04685245a5c40b002503589fd931
+      internalID: 2022706784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bee_1
+      name: bee_flipped_2
       rect:
         serializedVersion: 2
-        x: 669
-        y: 802
-        width: 418
-        height: 223
+        x: 1193
+        y: 809
+        width: 420
+        height: 246
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e50c8daabd3eb5441ac5e7231f1c8a62
-      internalID: 2073504649
+      spriteID: 8ecdbad2e9931a6429591f6928d91f9b
+      internalID: -1607476258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bee_2
+      name: bee_flipped_3
       rect:
         serializedVersion: 2
-        x: 1115
-        y: 779
+        x: 211
+        y: 336
         width: 433
-        height: 245
+        height: 252
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37903f68dab677848bc4fcd2c522203b
-      internalID: 1965958366
+      spriteID: dcee6d12085785c448d318c467f2806d
+      internalID: -707859989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bee_3
+      name: bee_flipped_4
       rect:
         serializedVersion: 2
-        x: 167
-        y: 354
-        width: 412
-        height: 223
+        x: 711
+        y: 340
+        width: 423
+        height: 252
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8bcbd90f72605c4fb4463be0791dfbe
-      internalID: -1258618701
+      spriteID: 8189b7953006a9242961b38dbea46489
+      internalID: -1020714142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bee_4
+      name: bee_flipped_5
       rect:
         serializedVersion: 2
-        x: 670
-        y: 354
-        width: 412
-        height: 223
+        x: 1215
+        y: 344
+        width: 419
+        height: 250
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,29 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05555a1f93189de4f8ffe257df0fc4ad
-      internalID: 1090899119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bee_5
-      rect:
-        serializedVersion: 2
-        x: 1175
-        y: 354
-        width: 412
-        height: 223
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 550cc78ffd43bfe4596347136395c7b7
-      internalID: -1761243791
+      spriteID: 3c02b3527f6939b4cb7f971ae29a2dcf
+      internalID: -1153882926
       vertices: []
       indices: 
       edges: []
@@ -252,12 +252,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bee_0: 1062842313
-      bee_2: 1965958366
-      bee_4: 1090899119
-      bee_5: -1761243791
-      bee_3: -1258618701
-      bee_1: 2073504649
+      bee_flipped_3: -707859989
+      bee_flipped_5: -1153882926
+      bee_flipped_0: 1136874586
+      bee_flipped_2: -1607476258
+      bee_flipped_1: 2022706784
+      bee_flipped_4: -1020714142
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
