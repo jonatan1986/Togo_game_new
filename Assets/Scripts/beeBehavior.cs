@@ -11,7 +11,7 @@ public class beeBehavior : MonoBehaviour
     private Animator animator;
     private bool isBeeDead = false;
     Rigidbody2D rigidBody2d;
-    public bool bIsBeeSpwaned = false;
+    public bool bIsBeeSpwaned = true;
     private float moveHorizontal = 0.3f;
     public bool m_bMoveRight = false;
     // Start is called before the first frame update
@@ -20,13 +20,15 @@ public class beeBehavior : MonoBehaviour
         animator = GetComponent<Animator>();
         isTriggered = false;
         rigidBody2d = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
-        //StartCoroutine(RemoveObject());
+        if (bIsBeeSpwaned)
+        {
+            StartCoroutine(RemoveObject());
+        }
     }
 
 
     public void SetTurnRight()
     {
-        Debug.Log("SetTurnRight");
         animator.SetBool("turnrightTrigger", true);
         moveHorizontal = -moveHorizontal;
         //rigidBody2d.velocity = new Vector2(moveHorizontal * 3, 0);
@@ -35,7 +37,6 @@ public class beeBehavior : MonoBehaviour
 
     public void SetTurnLeft()
     {
-        Debug.Log("SetTurnLeft");
         animator.SetBool("turnrightTrigger", false);
         moveHorizontal = -moveHorizontal;
         //rigidBody2d.velocity = new Vector2(-speed * 3, 0);
@@ -49,7 +50,10 @@ public class beeBehavior : MonoBehaviour
         {
             rigidBody2d.gravityScale = 0.0f;
             rigidBody2d.velocity = new Vector2(speed*moveHorizontal * 3, 0);
-            //rigidBody2d.AddForce(new Vector2(speed * 0.2f, 0), ForceMode2D.Impulse);
+            if (bIsBeeSpwaned)
+            {
+                rigidBody2d.AddForce(new Vector2(speed * 0.5f, 0), ForceMode2D.Impulse);
+            }
         }
         //if (bIsBeeSpwaned == true)
         //{
@@ -60,7 +64,6 @@ public class beeBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("OnTriggerEnter2D " + other.gameObject.tag);
         switch (other.gameObject.tag)
         {
             case "Player":
@@ -100,6 +103,7 @@ public class beeBehavior : MonoBehaviour
 
     IEnumerator RemoveObject()
     {
+         
         yield return new WaitForSeconds(10);
         if (gameObject != null)
         {
