@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour {
     public float  yspeed = 100.0f;
     private float thrust = 10.0f;
     public bool bIsGrounded = false;
-    public const float yVelocityScale = 1.3f;
+    public  float yVelocityScale = 1.3f;
     bool bIsDead = false;
     bool bIsOnSpring = false;
     bool bISDeadByParabolaJump = false;
