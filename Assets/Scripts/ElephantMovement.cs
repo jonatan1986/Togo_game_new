@@ -70,5 +70,7 @@ public class ElephantMovement : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         rigidBody2d.gravityScale = 5f;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
