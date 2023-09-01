@@ -16,7 +16,9 @@ public class CharacterMovement : MonoBehaviour {
     public float speed = 4.0f;
     public float  yspeed = 100.0f;
     private float thrust = 10.0f;
+    public float jumpGravityScale = 140.0f;
     public bool bIsGrounded = false;
+    public bool bIsJumping = false;
     public  float yVelocityScale = 1.3f;
     bool bIsDead = false;
     bool bIsOnSpring = false;
@@ -87,18 +89,39 @@ public class CharacterMovement : MonoBehaviour {
         cyclesSize = cycles;
 
     }
-
+    private float delta = 0f;
     void Jump()
     {
-        // Debug.Log("IsGrounded " + IsGrounded);
-        if (bIsGrounded == true && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow))
+        //Debug.Log(" bIsJumping " + bIsJumping  + " playerRigidbody2D.velocity.y " + playerRigidbody2D.velocity.y);// + " bIsJumping " + bIsJumping);
+        if (bIsJumping == false && bIsGrounded == true && (/*Input.GetKeyDown(KeyCode.UpArrow) || */Input.GetKey(KeyCode.UpArrow))
             && bEnablePlayerInput == true)
         {
-            //playerRigidbody2D.AddForce(new Vector2(speed, yVelocityScale * yspeed * 3.75f), ForceMode2D.Impulse);
+            //Debug.Log("Charter Movement Jump() 1");
+            playerRigidbody2D.gravityScale = jumpGravityScale;
+            bIsJumping = true;
+            playerRigidbody2D.AddForce(new Vector2(0f, delta*1f + yVelocityScale * yspeed * 0.7f), ForceMode2D.Impulse/*ForceMode2D.Impulse*/);
+            delta += 1f;
             //playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed * 3.75f);
-            playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed);
+            //playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed);
             animator.SetBool("isJumping", true);
         }
+        else if (bIsJumping == true && delta < 13f )
+        {
+            delta += 0.9f;
+            playerRigidbody2D.AddForce(new Vector2(0f, delta + yVelocityScale * yspeed * 0.8f), ForceMode2D.Impulse/*ForceMode2D.Impulse*/);
+        }
+        else if (playerRigidbody2D.velocity.y <= 0)
+        {
+            delta = 0f;
+            bIsJumping = false;
+            playerRigidbody2D.gravityScale = 60.0f;
+        }
+        //else if (bIsJumping == true && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow)) )
+        //{
+        //    Debug.Log("Charter Movement Jump() 2");
+        //    bIsJumping = false;
+        //    playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed);
+        //}
     }
 
     IEnumerator ReturnToJumpState()

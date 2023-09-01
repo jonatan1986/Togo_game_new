@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElephantMovement : MonoBehaviour
+public class AntMovement : MonoBehaviour
 {
     private Vector2 movement;
     private Rigidbody2D rigidBody2d;

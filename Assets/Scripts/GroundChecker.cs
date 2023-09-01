@@ -16,7 +16,8 @@ public class GroundChecker : MonoBehaviour {
         if (other.gameObject.tag == "ground")
         {
             yPos = Player.transform.position.y;
-            Player.GetComponent<CharacterMovement>().bIsGrounded = true;
+            Player.GetComponent<CharacterMovement>().bIsJumping = false;
+            Player.GetComponent<CharacterMovement>().bIsGrounded = true;        
         }
     }
 
