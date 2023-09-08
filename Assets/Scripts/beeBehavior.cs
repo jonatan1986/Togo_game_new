@@ -48,6 +48,7 @@ public class beeBehavior : MonoBehaviour
     {
         if (isBeeDead == false)
         {
+            //Debug.Log("OnTriggerEnter2D Weaponn isBeeDead " + isBeeDead);
             rigidBody2d.gravityScale = 0.0f;
             rigidBody2d.velocity = new Vector2(speed*moveHorizontal * 3, 0);
             if (bIsBeeSpwaned)
@@ -77,14 +78,12 @@ public class beeBehavior : MonoBehaviour
                 }
                 break;
             case "Weapon":
-                if (other.gameObject.tag == "Weapon")
-                {
                     animator.SetBool("isDead", true);
                     isBeeDead = true;
                     rigidBody2d.gravityScale = 0.1f;
                     rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
                     StartCoroutine(AccelerateFall());
-                }
+                    Debug.Log("OnTriggerEnter2D Weaponn " + isBeeDead);
                 break;
             case "Border":
                 if (m_bMoveRight)

@@ -74,9 +74,13 @@ public class CharacterMovement : MonoBehaviour {
         //Debug.Log(naviationManager.GetComponent<PlayerNavigator>().getxPosition() + " " + naviationManager.GetComponent<PlayerNavigator>().getyPosition());
         transform.position = new Vector2(NavigationManager.getxPosition(), NavigationManager.getyPosition());
     }
-
+    //void Start()
+    //{
+    //    Debug.Log("start");
+    //}
     void Awake()
     {
+        Debug.Log("awake");
         transform = GetComponent<Transform>();
         if (NavigationManager.getIsPositionUpdated() == true)
         {
@@ -92,7 +96,6 @@ public class CharacterMovement : MonoBehaviour {
     private float delta = 0f;
     void Jump()
     {
-        //Debug.Log(" bIsJumping " + bIsJumping  + " playerRigidbody2D.velocity.y " + playerRigidbody2D.velocity.y);// + " bIsJumping " + bIsJumping);
         if (bIsJumping == false && bIsGrounded == true && (/*Input.GetKeyDown(KeyCode.UpArrow) || */Input.GetKey(KeyCode.UpArrow))
             && bEnablePlayerInput == true)
         {
@@ -116,12 +119,6 @@ public class CharacterMovement : MonoBehaviour {
             bIsJumping = false;
             playerRigidbody2D.gravityScale = 60.0f;
         }
-        //else if (bIsJumping == true && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow)) )
-        //{
-        //    Debug.Log("Charter Movement Jump() 2");
-        //    bIsJumping = false;
-        //    playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed);
-        //}
     }
 
     IEnumerator ReturnToJumpState()
@@ -153,11 +150,6 @@ public class CharacterMovement : MonoBehaviour {
                 bIsOnSpring = false;
                 animator.SetBool("OnSpring", false);
             }
-            ////startcoroutine(returntojumpstate());
-            ////animator.setbool("backtojump", true);
-            //bisonspring = false;
-            //bbacktojump = true;
-            ////playerrigidbody2d.gravityscale = 40f;
         }
     }
 
@@ -229,8 +221,7 @@ public class CharacterMovement : MonoBehaviour {
 
 
     void Update()
-    {
-        //
+    { 
         Animation += Time.deltaTime;
         Animation = Animation % 5f;
         //
@@ -286,5 +277,4 @@ public class CharacterMovement : MonoBehaviour {
         transform.Find("ShootPoint").transform.position = new Vector2(transform.position.x + num*0.3f, transform.position.y);
         //
     }
-
 }

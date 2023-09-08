@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5837318195676071243}
   m_Layer: 0
   m_Name: 'right_border '
-  m_TagString: Border
+  m_TagString: AntBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 5837318195992139148}
   m_Layer: 0
   m_Name: left_border
-  m_TagString: Border
+  m_TagString: AntBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5837318195992139154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.550003, y: 0.34000015, z: -0.018650727}
+  m_LocalPosition: {x: -18.24, y: 0.85, z: -0.018650727}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -189,6 +189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662569804396858100, guid: 4bf83b34f5841c34692838746546f074,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5662569804396858101, guid: 4bf83b34f5841c34692838746546f074,
         type: 3}

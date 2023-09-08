@@ -13,7 +13,7 @@ TagManager:
   - Enemy
   - ElephantBorder
   - Border
-  - Weapon
+  - AntBorder
   layers:
   - Default
   - TransparentFX
