@@ -69,7 +69,6 @@ public class AntMovement : MonoBehaviour
     {
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("AccelerateFall");
         rigidBody2d.gravityScale = 5f;
     }
 }

@@ -14,7 +14,7 @@ public class CharacterMovement : MonoBehaviour {
     private Vector2 movement;
     private Animator animator;
     public float speed = 4.0f;
-    public float  yspeed = 100.0f;
+    public float yspeed;
     private float thrust = 10.0f;
     public float jumpGravityScale = 140.0f;
     public bool bIsGrounded = false;
@@ -80,7 +80,8 @@ public class CharacterMovement : MonoBehaviour {
     //}
     void Awake()
     {
-        Debug.Log("awake");
+        //Debug.Log("awake");
+        delta = 0f;
         transform = GetComponent<Transform>();
         if (NavigationManager.getIsPositionUpdated() == true)
         {

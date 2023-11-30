@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3419c702f0ccbbe41bd299344bb47ac2
+guid: ef6408947e1171a47a1405cdbb53b37b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,106 +116,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fox_0
+      name: Bridge_0
       rect:
         serializedVersion: 2
-        x: 627
-        y: 587
-        width: 198
-        height: 322
+        x: 32
+        y: 381
+        width: 100
+        height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acfdd05856beabf40bbafd4c36db9656
-      internalID: -1721443412
+      spriteID: 6aceede2940d4174eb702a14491fbc10
+      internalID: 1026800149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_1
+      name: Bridge_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 178
-        width: 206
-        height: 319
+        x: 191
+        y: 379
+        width: 104
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee713845be2042e41b12fd417058c553
-      internalID: 1691599
+      spriteID: 72eeba44a3fcf584ca7d82fce8338479
+      internalID: 760097763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_2
+      name: Bridge_2
       rect:
         serializedVersion: 2
-        x: 294
-        y: 175
-        width: 198
-        height: 316
+        x: 408
+        y: 377
+        width: 102
+        height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78f14ca2f14b9c44488e2950b5e7c47b
-      internalID: -851366037
+      spriteID: 2c3fd5b2c0a0a2642abe5e42a343efcc
+      internalID: -361178250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fox_3
+      name: Bridge_3
       rect:
         serializedVersion: 2
-        x: 509
-        y: 173
-        width: 206
-        height: 324
+        x: 22
+        y: 195
+        width: 213
+        height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ae7557cc2f77534b99fed87a6acac53
-      internalID: 1876161897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fox_4
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 171
-        width: 198
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f8cbd308f7721442951d86db174d7bf
-      internalID: -2106370199
+      spriteID: 09c16a4b78d17dc48bb03368c382d354
+      internalID: -585609461
       vertices: []
       indices: 
       edges: []
@@ -231,11 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fox_3: 1876161897
-      Fox_1: 1691599
-      Fox_2: -851366037
-      Fox_0: -1721443412
-      Fox_4: -2106370199
+      Bridge_0: 1026800149
+      Bridge_3: -585609461
+      Bridge_1: 760097763
+      Bridge_2: -361178250
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
