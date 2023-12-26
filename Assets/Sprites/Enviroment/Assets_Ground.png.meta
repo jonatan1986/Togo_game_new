@@ -121,8 +121,8 @@ TextureImporter:
         serializedVersion: 2
         x: 288
         y: 557
-        width: 195
-        height: 202
+        width: 190
+        height: 197
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: Assets_Ground_2
       rect:
         serializedVersion: 2
-        x: 526
+        x: 532
         y: 555
-        width: 190
-        height: 202
+        width: 206
+        height: 197
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,9 +204,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 53
-        y: 579
-        width: 185
-        height: 171
+        y: 581
+        width: 188
+        height: 173
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,9 +246,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 850
-        y: 637
+        y: 639
         width: 160
-        height: 31
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: Assets_Ground_7
       rect:
         serializedVersion: 2
-        x: 39
-        y: 349
-        width: 189
-        height: 164
+        x: 30
+        y: 346
+        width: 198
+        height: 167
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,9 +309,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 473
-        y: 310
-        width: 55
-        height: 169
+        y: 280
+        width: 30
+        height: 196
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,9 +330,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 563
-        y: 313
-        width: 161
-        height: 163
+        y: 310
+        width: 160
+        height: 166
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,34 +347,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Assets_Ground_12
-      rect:
-        serializedVersion: 2
-        x: 637
-        y: 477
-        width: 17
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0b9ac9b9e692a440ad1571577748879
-      internalID: 1125015028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Assets_Ground_13
       rect:
         serializedVersion: 2
-        x: 821
-        y: 279
-        width: 296
-        height: 202
+        x: 820
+        y: 280
+        width: 213
+        height: 198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,34 +368,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Assets_Ground_14
-      rect:
-        serializedVersion: 2
-        x: 925
-        y: 477
-        width: 17
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b85135ab7f5a0942ad6aa01f97cdd7a
-      internalID: -699845698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Assets_Ground_15
       rect:
         serializedVersion: 2
-        x: 763
-        y: 311
-        width: 26
-        height: 160
+        x: 764
+        y: 294
+        width: 24
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,12 +392,12 @@ TextureImporter:
       name: Assets_Ground_17
       rect:
         serializedVersion: 2
-        x: 562
-        y: 212
-        width: 165
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 560
+        y: 99
+        width: 164
+        height: 159
+      alignment: 9
+      pivot: {x: 0.48277786, y: 0.38943052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

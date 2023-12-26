@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f70efd277bbee104f94587ffeee5140a
+guid: 422d4f12c45161e4a9d0717eea344b0a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,85 +116,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mountains animation_0
+      name: Glowing animal_0
       rect:
         serializedVersion: 2
-        x: 233
-        y: 1033
-        width: 1412
-        height: 584
+        x: 141
+        y: 339
+        width: 272
+        height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1013e2617da1dd44a07455ded641ebd
-      internalID: 1688050452
+      spriteID: 456a824b57808bd41947caae1d7ed4cd
+      internalID: 2043295149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mountains animation_1
+      name: Glowing animal_2
       rect:
         serializedVersion: 2
-        x: 2177
-        y: 1033
-        width: 1412
-        height: 584
+        x: 464
+        y: 338
+        width: 269
+        height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 806f75f2c5c65e0459769eeb9decd0ff
-      internalID: 1821138468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mountains animation_2
-      rect:
-        serializedVersion: 2
-        x: 237
-        y: 132
-        width: 1412
-        height: 585
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0976f326b7341754ca9da0fd8f1d3f7c
-      internalID: 333273951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mountains animation_3
-      rect:
-        serializedVersion: 2
-        x: 2191
-        y: 159
-        width: 1412
-        height: 585
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3b8819a350a6184794487615fb03c0c
-      internalID: 1957032868
+      spriteID: 999d43fcd226487448f87c8333819928
+      internalID: -353289617
       vertices: []
       indices: 
       edges: []
@@ -210,10 +168,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mountains animation_1: 1821138468
-      Mountains animation_2: 333273951
-      Mountains animation_0: 1688050452
-      Mountains animation_3: 1957032868
+      Glowing animal_2: -353289617
+      Glowing animal_0: 2043295149
+      Glowing animal_1: 1134867718
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

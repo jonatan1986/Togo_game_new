@@ -48,7 +48,7 @@ public class CharacterMovement : MonoBehaviour {
         m_loseLife.Invoke();
     }
 
-    public void SetIsOnSrping()
+    public void SetIsOnSpring()
     {
         animator.SetBool("OnSpring", true);
         bIsOnSpring = true;
@@ -135,8 +135,8 @@ public class CharacterMovement : MonoBehaviour {
         {
             //if (Input.GetAxis("Vertical") > 0)
             {
-                playerRigidbody2D.AddForce(new Vector2(0f, springVerticalVelocity), ForceMode2D.Force);
-                playerRigidbody2D.velocity += new Vector2(0f, springVerticalVelocity);
+                playerRigidbody2D.AddForce(new Vector2(0f, springVerticalVelocity + Input.GetAxis("Vertical")), ForceMode2D.Force);
+                playerRigidbody2D.velocity += new Vector2(0f, springVerticalVelocity + Input.GetAxis("Vertical"));
             }
             //Debug.Log("jumponspring");
 

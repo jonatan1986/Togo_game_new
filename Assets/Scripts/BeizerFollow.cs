@@ -9,7 +9,7 @@ public class BeizerFollow : MonoBehaviour
     private int routeToGo;
     private float tParam;
     private Vector2 flyPosition;
-    private float speedModifier;
+    public float speedModifier = 2.75f;
     private bool coroutineAllowed;
     private CharacterMovement characterMovement;
 
@@ -18,7 +18,6 @@ public class BeizerFollow : MonoBehaviour
     {
         routeToGo = 0;
         tParam = 0f;
-        speedModifier = 2.75f;
         coroutineAllowed = true;
     }
 

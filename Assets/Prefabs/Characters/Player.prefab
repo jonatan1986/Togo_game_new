@@ -101,8 +101,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3060498060819636016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 0.11, z: 0}
+  m_LocalScale: {x: 0.84, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3060498061176628563}
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.035666406, y: -1.0914888}
+  m_Offset: {x: 0.00014215708, y: -1.0914888}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47689444, y: 0.18627335}
+  m_Size: {x: 0.3222596, y: 0.18627334}
   m_EdgeRadius: 0
 --- !u!114 &3060498060819636018
 MonoBehaviour:
@@ -177,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 3060498061176628560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.6299992, y: 1.3500005, z: 0}
-  m_LocalScale: {x: 2.35, y: 0.979, z: 1}
+  m_LocalScale: {x: 2.35, y: 0.9728323, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3060498060819636017}
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -269,15 +269,15 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 2.5
+  m_UseAutoMass: 1
+  m_Mass: 0.57588166
   m_LinearDrag: 0
-  m_AngularDrag: 0.5
-  m_GravityScale: 26
+  m_AngularDrag: 1.9
+  m_GravityScale: 60.5
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3060498061176628558
 MonoBehaviour:
@@ -292,17 +292,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  yspeed: 100
-  IsGrounded: 0
-  cycles: 3
-  springVerticalVelocity: 0
-  DeadSound: {fileID: 0}
-  DeadEvent:
+  yspeed: 31
+  jumpGravityScale: 140
+  bIsGrounded: 0
+  bIsJumping: 0
+  yVelocityScale: 1.3
+  cycles: 5
+  springVerticalVelocity: 240
+  DeadSound: {fileID: 8300000, guid: ffbe380b84698484cb34e7675ef46216, type: 3}
+  m_AddLife:
     m_PersistentCalls:
-      m_Calls: []
-  PickedHeartEvent:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LivesCounter, Assembly-CSharp
+        m_MethodName: AddLife
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_loseLife:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LivesCounter, Assembly-CSharp
+        m_MethodName: LoseLife
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &3060498061176628557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -316,7 +343,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.024574399, y: -0.054376423}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -327,7 +354,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 2}
+  m_Size: {x: 0.1331923, y: 1.8912472}
   m_EdgeRadius: 0
 --- !u!114 &2035444981
 MonoBehaviour:

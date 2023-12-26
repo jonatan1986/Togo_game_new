@@ -25,7 +25,7 @@ public class SpringMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("OnCollisionEnter2D");
-        other.gameObject.GetComponent<CharacterMovement>().SetIsOnSrping();
+        other.gameObject.GetComponent<CharacterMovement>().SetIsOnSpring();
         animator.SetBool("OnSpring", true);
         Debug.Log(other.gameObject.tag);
         //other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f, 5000f), ForceMode2D.Impulse);
