@@ -18,9 +18,10 @@ public class Spawner : MonoBehaviour
             isSpawned = true;
             var transform = GetComponent<Transform>();
             var Instance = (GameObject)Instantiate(enemy, new Vector3(transform.position.x + delta, transform.position.y, 0), Quaternion.identity);
-            rigidBody2d = (Rigidbody2D)Instance.GetComponent(typeof(Rigidbody2D));
-            rigidBody2d.velocity = new Vector2(velocity, 0);
-            //beeInstance.gameobject.(Rigidbody2D)GetComponent(typeof(Rigidbody2D)).velocity = new Vector2(0 * 0.1f, 0);
+            if (Instance.GetComponent<beeBehavior>() != null)
+            {
+                Instance.GetComponent<beeBehavior>().bIsBeeSpwaned = true;
+            }
         }
     }
 

@@ -6,7 +6,6 @@ public class beeBehavior : MonoBehaviour
 {
     private Vector2 movement;
     public float speed;
-    private bool isTriggered;
     private CharacterMovement characterMovement;
     private Animator animator;
     private bool isBeeDead = false;
@@ -18,7 +17,6 @@ public class beeBehavior : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        isTriggered = false;
         rigidBody2d = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
         if (bIsBeeSpwaned)
         {
@@ -103,7 +101,7 @@ public class beeBehavior : MonoBehaviour
     IEnumerator RemoveObject()
     {
          
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
         if (gameObject != null)
         {
             Destroy(gameObject);

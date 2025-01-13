@@ -34,7 +34,6 @@ public class RockMovement : MonoBehaviour
         if (other.gameObject.tag == "ground")
         {
             rigidBody2d.gravityScale = 2f;
-            float forceHeight = 500f;
             rigidBody2d.velocity = Vector2.zero;
             //rigidBody2d.AddForce(Vector2.up * forceHeight);
             rigidBody2d.AddForce(new Vector2(-5,ySpeed), ForceMode2D.Impulse);

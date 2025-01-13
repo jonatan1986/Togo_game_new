@@ -14,6 +14,9 @@ TagManager:
   - ElephantBorder
   - Border
   - AntBorder
+  - Weapon
+  - KillFox
+  - Spring
   layers:
   - Default
   - TransparentFX
@@ -21,9 +24,9 @@ TagManager:
   - Glow
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Spring
+  - Enemy
   - 
   - 
   - 
@@ -62,4 +65,7 @@ TagManager:
     locked: 0
   - name: glow
     uniqueID: 174600905
+    locked: 0
+  - name: Ground
+    uniqueID: 2410263175
     locked: 0
