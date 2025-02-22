@@ -103,7 +103,7 @@ public class CharacterMovement : MonoBehaviour {
             //Debug.Log("Charter Movement Jump() 1");
             playerRigidbody2D.gravityScale = jumpGravityScale;
             bIsJumping = true;
-            playerRigidbody2D.AddForce(new Vector2(0f, delta*1f + yVelocityScale * yspeed * 0.75f), ForceMode2D.Impulse/*ForceMode2D.Impulse*/);
+            playerRigidbody2D.AddForce(new Vector2(0f, delta*1f + yVelocityScale * yspeed * 0.75f), ForceMode2D.Force/*ForceMode2D.Impulse*/);
             delta += 1f;
             //playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed * 3.75f);
             //playerRigidbody2D.velocity = new Vector2(speed, yVelocityScale * yspeed);

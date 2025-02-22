@@ -12,19 +12,23 @@ public class BeizerFollow : MonoBehaviour
     public float speedModifier = 2.75f;
     private bool coroutineAllowed;
     private CharacterMovement characterMovement;
+    private Rigidbody2D rigidBody2d;
+    private bool isHitByWeapon;
 
     // Start is called before the first frame update
     void Start()
     {
+        rigidBody2d = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
         routeToGo = 0;
         tParam = 0f;
         coroutineAllowed = true;
+        isHitByWeapon = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (coroutineAllowed)
+        if (coroutineAllowed == true && isHitByWeapon == false)
         {
             StartCoroutine(GoByTheRoute(routeToGo));
         }
@@ -65,23 +69,23 @@ public class BeizerFollow : MonoBehaviour
             characterMovement = other.gameObject.GetComponent<CharacterMovement>();
             if (characterMovement)
             {
-                characterMovement.SetIsDead(true);
+                characterMovement.SetIsDead(false);
             }
         }
         else if (other.gameObject.tag == "Weapon")
         {
-            Destroy(gameObject);
-            //Die();
+            coroutineAllowed = false;
+            isHitByWeapon = true;
+            rigidBody2d.gravityScale = 5f;
+            rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
+            StartCoroutine(AccelerateFall());
         }
+    }
 
-        //  if (isTriggered == false)
-        {
-            //isTriggered = true;
-            //StartCoroutine(KillPlayer(other));
-            //Debug.Log("OnTriggerEnter2D");
-
-        }
-
-        //Destroy(other.gameObject);
+    IEnumerator AccelerateFall()
+    {
+        //      yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 }

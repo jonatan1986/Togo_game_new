@@ -101,7 +101,6 @@ public class GreenDinoMovement : MonoBehaviour
 
     IEnumerator AccelerateFall()
     {
-        Debug.Log("AccelerateFall ");
         rigidBody2d.gravityScale = 0.1f;
         rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
         GetComponent<PolygonCollider2D>().enabled = false;
