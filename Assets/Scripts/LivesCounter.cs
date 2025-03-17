@@ -26,7 +26,8 @@ public class LivesCounter : MonoBehaviour
     // Call this method whenever a life is lost
     public void LoseLife()
     {
-        //currentLives--;
+        currentLives--;
+        Debug.Log("LoseLife");
         HealthManager.LoseLife();
         UpdateLivesUI();
 

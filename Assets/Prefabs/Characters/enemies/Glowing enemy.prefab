@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4257635904049342539}
   m_Layer: 0
   m_Name: Glowing enemy
-  m_TagString: Untagged
+  m_TagString: Immortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -15,6 +15,7 @@ public class FoxMovement : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Debug.Log("FoxMovement111");
         vector = bIsmoveRight ? 1 : -1;
         rigidBody2d = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
     }

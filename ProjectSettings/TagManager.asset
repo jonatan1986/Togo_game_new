@@ -17,6 +17,7 @@ TagManager:
   - Weapon
   - KillFox
   - Spring
+  - Immortal
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Ground
   - Spring
   - Enemy
-  - 
+  - Thorn
   - 
   - 
   - 

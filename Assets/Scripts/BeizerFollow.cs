@@ -72,6 +72,10 @@ public class BeizerFollow : MonoBehaviour
                 characterMovement.SetIsDead(false);
             }
         }
+        else if (gameObject.tag == "Immortal")
+        {
+            return;
+        }
         else if (other.gameObject.tag == "Weapon")
         {
             coroutineAllowed = false;
@@ -81,6 +85,7 @@ public class BeizerFollow : MonoBehaviour
             StartCoroutine(AccelerateFall());
         }
     }
+
 
     IEnumerator AccelerateFall()
     {

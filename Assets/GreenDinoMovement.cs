@@ -95,12 +95,27 @@ public class GreenDinoMovement : MonoBehaviour
             //Destroy(gameObject);
             //Die();
         }
+        else if (other.gameObject.name == "FallTrigger")
+        {
+            StartCoroutine(FreeFall());
+        }
 
         //Destroy(other.gameObject);
     }
 
+    IEnumerator FreeFall()
+    {
+        Debug.Log("freefall");
+        rigidBody2d.gravityScale = 100f;
+        rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
+        GetComponent<PolygonCollider2D>().enabled = false;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
+
     IEnumerator AccelerateFall()
     {
+        Debug.Log("AccelerateFall");
         rigidBody2d.gravityScale = 0.1f;
         rigidBody2d.velocity = new Vector2(0.0f, 0.0f);
         GetComponent<PolygonCollider2D>().enabled = false;

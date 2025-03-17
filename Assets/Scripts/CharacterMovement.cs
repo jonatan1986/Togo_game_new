@@ -36,7 +36,10 @@ public class CharacterMovement : MonoBehaviour {
     public UnityEvent m_loseLife;
 
 
-
+    public bool GetIsMovingRight()
+    {
+        return m_bIsMovingRight;
+    }
 
     public void AddLife()
     {
@@ -57,6 +60,7 @@ public class CharacterMovement : MonoBehaviour {
     public void SetIsDead(bool iSDeadByParabolaJump = false)
     {
         animator.SetBool("isDead", true);
+        RemoveLife();
         if (iSDeadByParabolaJump == false)
         {
             bIsDead = true;
@@ -66,6 +70,11 @@ public class CharacterMovement : MonoBehaviour {
             bISDeadByParabolaJump = true;
         }
         
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 
     void GetToLastCheckPoint()
@@ -154,13 +163,18 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
 
+    public float deltaX = 0.5f;
+    public float deltaY = 6f;
+    public float animationDivisor = 2.7f;
+    public float parabHeight = 2f;
     IEnumerator MovePlayerWithParabola()
     {
         float x = transform.position.x;
         float y = transform.position.y;
-
+        Vector2 startPos = transform.position;
+        Vector2 endPos = new Vector2(x - deltaX, y + deltaY);
         //transform.position = MathParabola.Parabola(Vector2.zero, Vector2.left * (-80f), 10f, Animation / 5f);
-        transform.position = MathParabola.Parabola(Vector2.zero, new Vector2(x-0.5f,y+6), 0f, Animation / 2.7f);
+        transform.position = MathParabola.Parabola(startPos, endPos, parabHeight, Animation / animationDivisor);
         yield return new WaitForSeconds(2);
     }
 
@@ -168,11 +182,11 @@ public class CharacterMovement : MonoBehaviour {
 
     IEnumerator KillPlayerByParbolaMovement()
     {
+        AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         GetComponent<Collider2D>().enabled = false;
         bEnablePlayerInput = false;
         GameObject.FindWithTag("MainCamera").GetComponent<maincamera>().PauseMovement();
         yield return StartCoroutine(MovePlayerWithParabola());
-        AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         StartCoroutine(canvas.GetComponent<UiController>().FadeBlackOutSquare());
         yield return new WaitForSeconds(1);
         ReloadScene();
@@ -185,10 +199,10 @@ public class CharacterMovement : MonoBehaviour {
 
     IEnumerator KillPlayerByFall()
     {
+        AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         GetComponent<Collider2D>().enabled = false;
         bEnablePlayerInput = false;
         GameObject.FindWithTag("MainCamera").GetComponent<maincamera>().PauseMovement();
-        AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         StartCoroutine(canvas.GetComponent<UiController>().FadeBlackOutSquare());
         yield return new WaitForSeconds(2);
         ReloadScene();

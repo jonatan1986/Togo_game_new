@@ -9,15 +9,25 @@ public class Bullet : MonoBehaviour
     public float gravity = -9.8f;
     private Vector2 velocity;
     public float yInitialSpeed;
+    public AudioClip WeaponSoundSound;
     //
-  //  public float speed = 20f;
+    //  public float speed = 20f;
     public Rigidbody2D rb;
     // Start is called before the first frame update
+
+    public void SetToLeft()
+    {
+        speed *= -1;
+    }
+
     void Start()
     {
+
         // velocity = new Vector2(speed, speed / 2);
         // rb.velocity = transform.right * speed;
-        yInitialSpeed = speed / 2;
+        AudioSource.PlayClipAtPoint(WeaponSoundSound, transform.position);
+        yInitialSpeed = Mathf.Abs(speed) / 2;
+        //yInitialSpeed = abs(speed) / 2;
         velocity = new Vector2(speed, yInitialSpeed);
 
     }

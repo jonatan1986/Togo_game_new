@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public Transform shootPoint;
     public GameObject bulletPrefab;
+    public int direction = 1;// left = -1,right = 1
 
     // Update is called once per frame
     void Update()
@@ -18,8 +19,15 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        var obj = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-        StartCoroutine(RemoveObject(obj));
+        var bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+        if (GetComponent<CharacterMovement>().GetIsMovingRight() == false)
+        {
+            //speed *= -1;//
+            Bullet bulletObj = bullet.GetComponent<Bullet>();
+            bulletObj.SetToLeft();
+        }
+
+        StartCoroutine(RemoveObject(bullet));
     }
 
     IEnumerator RemoveObject(GameObject obj)
